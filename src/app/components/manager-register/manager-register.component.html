@@ -1,0 +1,41 @@
+<div class="container">
+    
+    <div class="container-1">
+        <img class="one" src="../../../assets/1.jpg">
+        <img class="two" src="../../../assets/2.jpg">
+        <img class="three" src="../../../assets/5.jpg">
+        <img class="four" src="../../../assets/4.jpg">
+    </div>
+
+
+<div class="login-container">
+<h1 class="login-title">Happy Booking</h1>
+<h2>Manager Register</h2>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <div class="content">
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        <!-- <label for="name">Full Name</label><br> -->
+        <input type="text" id="name" [(ngModel)]="fullName" name="name" placeholder="Full Name" text>
+      </div>
+  <div class="content">
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+    <!-- <label for="email">Email</label><br> -->
+    <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Email" required email>
+  </div>
+  <div class="content">
+    <i class="fa fa-lock" aria-hidden="true"></i>
+    <!-- <label for="password">Password</label><br> -->
+    <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Password" required>
+  </div>
+  <div class="content">
+    <i class="fa fa-phone" aria-hidden="true"></i>
+    <!-- <label for="number">Phone Number</label><br> -->
+    <input type="number" id="number" [(ngModel)]="phoneNumber" name="number" placeholder="Phone number" required>
+  </div>
+ 
+  <button class="btn" type="submit" [disabled]="!loginForm.valid">SIGN UP</button>
+  <p class="small-content">Already have an account?<a [routerLink]="['/manager-login']">Login</a></p>
+</form>
+</div>
+
+</div>

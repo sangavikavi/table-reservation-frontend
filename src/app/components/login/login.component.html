@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="container-1">
+        <img class="one" src="../../../assets/1.jpg">
+        <img class="two" src="../../../assets/2.jpg">
+        <img class="three" src="../../../assets/5.jpg">
+        <img class="four" src="../../../assets/4.jpg">
+    </div>
+
+<div class="login-container">
+    <h1 class="login-title">Happy Booking</h1>
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="content">
+        <i class="fa fa-envelope icon"></i>
+        <!-- <label for="email">Email</label><br> -->
+        <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Email" email>
+      </div>
+      <div class="content">
+        <i class="fa fa-key icon"></i>
+        <!-- <label for="password">Password</label><br> -->
+        <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="password">
+      </div>
+     
+      <button class="btn" type="submit" [disabled]="!loginForm.valid">SIGN IN</button>
+      <p class="small-content">Don't have a account?<a [routerLink]="['/register']">Register</a></p>
+    </form>
+  </div>
+  
+</div>

@@ -1,0 +1,157 @@
+.container{
+
+    background-size: cover;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.container-1{
+    height: 600px;
+    width: 500px;
+    background-color: #ff0000;
+    border-radius: 20px;
+}
+.one{
+    height: 350px;
+    width: 300px;
+    position: relative;
+    top: 150px;
+    left: 200px;
+    border-radius: 10px;
+
+}
+.two{
+    height: 130px;
+    width: 200px;
+    position:absolute;
+    top:470px;
+    left: 600px;
+    border: 5px solid white;
+   
+
+}
+.three{
+    height: 150px;
+    width: 200px;
+    border: 5px solid white;
+    position: absolute;
+    top: 170px;
+    left: 600px;
+   
+
+}
+.four{
+    height: 150px;
+    width: 220px;
+    position:absolute;
+    top:280px;
+    left: 350px;
+    border: 5px solid white;
+  
+    
+
+}
+.container p{
+    margin-left: 14px;
+}
+h1{
+    font-weight: bold;
+    font-size: 40px;
+    position: relative;
+    top: 5px;
+}
+h2{
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 25px;
+    margin-top: 15px;
+    position: relative;
+    top: 12px;
+  
+}
+.login-container{
+    height: 560px;
+    width: 450px;
+    position: relative;
+    left: -30px;
+    background-color: rgba(0, 0, 0, 0.621);
+    padding: 20px;
+    padding-right: 32px;
+    border-radius: 5px;
+    background-color: white;
+    color: #ff0000;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px rgb(210, 203, 203);
+}
+.login-title{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+
+}
+.content{
+    
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+i{
+    position: relative;
+    left: 15px;
+    top: 35px;
+}
+input::placeholder{
+    position: relative;
+    left:30px;
+    font-size: 13px;
+    
+}
+input{
+    border: none;
+    display: block;
+    border: 1px solid rgb(190, 186, 186);
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    
+   
+   
+}
+input:active{
+    border: 1px solid #ff0000;
+}
+
+.btn{
+    border: 2px solid black;
+    background-color: rgb(255, 0, 0);
+    padding: 10px;
+    margin-left: 22px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    width: 380px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 35px;
+}
+
+.btn:hover{
+    background-color: rgb(222, 83, 83);
+}
+.small-content{
+    font-size: 13px;
+    text-align: center;
+    padding: 5px;
+    color: rgba(0, 0, 0, 0.621);
+    font-weight: bold;
+}
+.small-content a{
+    color: rgb(255, 0, 0);
+    padding-left: 5px;
+    font-weight: bold;
+}
