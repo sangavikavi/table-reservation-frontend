@@ -13,6 +13,24 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ManagerLoginComponent } from './components/manager-login/manager-login.component';
 import { ManagerRegisterComponent } from './components/manager-register/manager-register.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { RestaurantDetailComponent } from './components/restaurant-detail/restaurant-detail.component';
+import { TableWidgetComponent } from './components/table-widget/table-widget.component';
+import { BookingDialogComponent } from './components/booking-dialog/booking-dialog.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core';
+import { UserBookingsComponent } from './components/user-bookings/user-bookings.component';
+import { GmailValidatorDirective } from './gmail-validator.directive';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +40,15 @@ import { ManagerRegisterComponent } from './components/manager-register/manager-
     RegisterComponent,
     DashboardComponent,
     ManagerLoginComponent,
-    ManagerRegisterComponent
+    ManagerRegisterComponent,
+    FooterComponent,
+    HeaderComponent,
+    RestaurantDetailComponent,
+    TableWidgetComponent,
+    BookingDialogComponent,
+    UserBookingsComponent,
+    GmailValidatorDirective,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +56,13 @@ import { ManagerRegisterComponent } from './components/manager-register/manager-
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatProgressSpinnerModule
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
