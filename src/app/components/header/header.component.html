@@ -1,0 +1,13 @@
+<div class="nav">
+    <nav class="container">
+        <div>
+            <h3 class="logo">Booking Bistro</h3>
+        </div>
+        <div>
+            <a routerLink="/user/mybookings">My Bookings</a>
+            <a [routerLink]="['/dashboard']">Restaurants</a>
+            <a [routerLink]="['/login']" (click)="logout()">Logout <img src="../../../assets/logout.png"></a>
+            
+        </div>
+    </nav>
+</div>

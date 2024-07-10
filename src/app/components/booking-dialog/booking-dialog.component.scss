@@ -1,0 +1,60 @@
+.time-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    gap: 10px;
+    width: 400px;
+}
+
+.time-slot {
+    flex: 0 0 auto; 
+}
+
+button {
+    padding: 8px 16px; 
+    background-color: #ff5757; 
+    color: white; 
+    border: none;
+    border-radius: 4px; 
+
+    &:hover {
+        background-color: #b30000;
+    }
+}
+.time-slot button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #ff7676;
+    cursor: pointer;
+}
+
+.time-slot button.selected {
+    color: white;
+    background-color: rgb(255, 0, 0);
+    border-color: rgb(0, 0, 0);
+}
+.btn{
+    margin-top: 20px;
+    cursor: pointer;
+}
+.time-slot button[disabled] {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+  }
+  input[type="date"]:disabled {
+    background-color: #636363; 
+    color: #666; 
+  }
+  .error-message p {
+    color: red;
+    font-weight: bold;
+}
+
+.btn-group{
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    cursor: pointer;
+}

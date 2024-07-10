@@ -1,0 +1,18 @@
+<app-header></app-header>
+
+<div *ngIf="restaurant" class="container">
+    <div class="content">
+        <h2>{{ restaurant.restaurant.name }}</h2>
+        <img src="{{ '../../../../../assets/' + (restaurant.restaurant.id-1) + '.jpg' }}">
+        <h4>About Restaurant</h4>
+        <p><strong>Cuisines: </strong>{{ restaurant.restaurant.cuisines }}</p>
+        <p><strong>Location: </strong>{{ restaurant.restaurant.location }}</p>
+        <p><strong>Created At: </strong>{{ restaurant.restaurant.createdAt }}</p>
+        <p><strong>Updated At: </strong> {{ restaurant.restaurant.updatedAt }}</p>
+    </div>
+    <div>
+       
+        <app-table-widget [id]="restaurant.id"></app-table-widget>
+    </div>
+</div>
+<app-footer></app-footer>

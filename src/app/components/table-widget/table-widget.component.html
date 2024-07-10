@@ -1,0 +1,31 @@
+<div class="scroll">
+    <div *ngIf="restaurant" class="container">
+        <h3>Working Days:</h3>
+        <p class="working-days">{{ restaurant.workingDays }}</p>
+        <div class="content">
+            <h3>Available Tables:</h3>
+            <div *ngIf="tables.length > 0; else noTables">
+                <div *ngFor="let table of tables" class="tables" >
+                    <div class="tables-1">
+                        <div>
+                            <img src="../../../assets/table-1.png">
+                        </div>
+                        <div class="table-values">
+                            <p>Table Id: {{ table.tableNumber }}</p>
+                            <p>Capacity: {{ table.capacity }}</p>
+                            <p>Type: {{ table.tableType }}</p>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button mat-button (click)="openBookingDialog(table)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <ng-template #noTables>
+                <p>No tables available.</p>
+            </ng-template>
+
+           
+        </div>
+    </div>
+</div>

@@ -1,30 +1,37 @@
 <div class="container">
-    <div class="container-1">
-        <img class="one" src="../../../assets/1.jpg">
-        <img class="two" src="../../../assets/2.jpg">
-        <img class="three" src="../../../assets/5.jpg">
-        <img class="four" src="../../../assets/4.jpg">
-    </div>
+  <div class="container-1">
+      <img class="one" src="../../../assets/one.jpg">
+      <img class="two" src="../../../assets/two.jpg">
+      <img class="three" src="../../../assets/five.jpg">
+      <img class="four" src="../../../assets/four.jpg">
+  </div>
 
 <div class="login-container">
-    <h1 class="login-title">Happy Booking</h1>
-    <h2>Manager Login</h2>
-    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-      <div class="content">
-        <i class="fa fa-envelope icon"></i>
-        <!-- <label for="email">Email</label><br> -->
-        <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Email" email>
+  <h1 class="login-title">Happy Booking</h1>
+  <h2>Manager Login</h2>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
+    <div class="content">
+      <i class="fa fa-envelope icon"></i>
+      <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Email"
+             required email #emailField="ngModel">
+      <div *ngIf="emailField.errors && (emailField.dirty || emailField.touched)" class="error">
+        <div *ngIf="emailField.errors['required']">Email is required.</div>
+        <div *ngIf="emailField.errors['email']">Please enter a valid email.</div>
       </div>
-      <div class="content">
-        <i class="fa fa-key icon"></i>
-        <!-- <label for="password">Password</label><br> -->
-        <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="password">
+    </div>
+    <div class="content">
+      <i class="fa fa-key icon"></i>
+      <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Password"
+             required minlength="8" #passwordField="ngModel">
+      <div *ngIf="passwordField.errors && (passwordField.dirty || passwordField.touched)" class="error">
+        <div *ngIf="passwordField.errors['required']">Password is required.</div>
+        <div *ngIf="passwordField.errors['minlength']">Password must be at least 8 characters long.</div>
       </div>
-     
-      <button class="btn" type="submit" [disabled]="!loginForm.valid">SIGN IN</button>
-      <p class="small-content">Don't have a account?<a [routerLink]="['/manager-register']">Register</a></p>
-    </form>
-  </div>
-  
+    </div>
+    <button class="btn" type="submit" [disabled]="!loginForm.valid">SIGN IN</button>
+    <p class="small-content">Don't have an account?<a [routerLink]="['/register']">Register</a></p>
+  </form>
+</div>
+
 </div>
 

@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Select a Date and Time</h2>
+    
+    <!-- Date Selection -->
+    <mat-form-field>
+      <mat-label></mat-label>
+      <input matInput [(ngModel)]="selectedDate" [matDatepicker]="picker" [min]="minDate" (dateChange)="loadAvailableTimes()">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  
+    <!-- Available Times Display - Only shown if selectedDate is set -->
+    <div *ngIf="selectedDate && availableTimes.length > 0">
+        <h3>Available Times:</h3>
+        <div class="time-container">
+          <div *ngFor="let slot of availableTimes" class="time-slot">
+            <button (click)="selectTime(slot.time)" [disabled]="!slot.available" [ngClass]="{'selected': slot.time === selectedTime}">
+              {{ slot.time }}
+            </button>
+          </div>
+        </div>
+    </div>
+    <div *ngIf="selectedDate && availableTimes.length === 0">
+        <p>No available times for the selected date.</p>
+    </div>
+       <!-- Error Message Display -->
+    <div *ngIf="bookingError" class="error-message">
+        <p>{{ bookingError }}</p>
+    </div>
+    
+    <!-- Book Button - Only enabled if a time and date are selected -->
+     <div class="btn-group">
+       <button class="btn" (click)="bookTable()" [disabled]="!selectedTime || !selectedDate">
+         Book Table
+       </button>
+       <button mat-button (click)="onClose()" id="cancel">Cancel</button>
+     </div>
+</div>

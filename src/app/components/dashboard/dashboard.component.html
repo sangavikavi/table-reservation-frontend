@@ -1,1 +1,39 @@
-<p>dashboard works!</p>
+<app-header></app-header>
+<div *ngIf="isLoading" class="spinner-container">
+    <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!isLoading">
+    <div class="top-container">
+        <div class="dashboard-content">
+            <h1>Book<span> Your</span><br>Table, Taste<br> the Delight</h1>
+            <h4>"Discover the finest dining experiences and <br>reserve your table effortlessly with BookingBristo,
+                <br>your ultimate restaurant resrvation companion"</h4>
+            <button>Explore</button>
+        </div>
+        <img src="../../../assets/lite.png">
+    </div>
+
+    <h1 class="top-title">Find Restaurants</h1>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" [(ngModel)]="searchTerm" (input)="onSearchChange()" placeholder="Search restaurants...">
+            <div>
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="restaurant-list">
+
+            <div *ngFor="let restaurant of filteredRestaurants; let i = index" class="restaurant-item">
+                <a [routerLink]="['/restaurants', restaurant.id]">
+                    <div class="photo">
+                        <img src="{{ '../../../../../assets/' + (i+1) + '.jpg' }}">
+                        <h3 class="title">{{ restaurant.name }}</h3>
+                        <p class="cuisines">{{ restaurant.cuisines }}</p>
+                        <p class="location">,{{ restaurant.location }}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

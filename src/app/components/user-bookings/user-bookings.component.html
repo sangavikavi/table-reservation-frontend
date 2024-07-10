@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="container-main">
+  <div>
+    <h1>My Bookings</h1>
+  </div>
+
+  <div *ngFor="let booking of bookings">
+    <div class="main-container">
+    <div class="container">
+      <h3>{{ booking.reservation.restaurant.name }} - Table {{ booking.reservation.table.tableNumber }}</h3>
+      <p>Date: {{ booking.reservation.reservationDate }} | Time: {{ booking.reservation.slotStartTime }} - {{
+        booking.reservation.slotEndTime }}</p>
+      <button [ngStyle]="{'background-color': getStatusColor(booking.reservation.status)}">{{ booking.reservation.status
+        }}</button>
+<button class="cancel-btn" *ngIf="!(booking.reservation.status === 'CANCELLED' || booking.reservation.status === 'PENDINGFORCANCELLATION')" (click)="cancelBooking(booking.reservation.id)">Cancel</button>
+</div>
+   
+  </div>
+  </div>
+</div>
+<div *ngIf="bookings.length === 0">
+  <div class="Not-available">
+    <p>Hey you don't have any Bookings.</p>
+    <p>Go and reserve a table</p>
+  </div>
+</div>
+<app-footer></app-footer>

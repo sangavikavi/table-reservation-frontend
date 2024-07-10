@@ -1,0 +1,34 @@
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h5>About BookingBistro</h5>
+          <p>Your ultimate companion for discovering and reserving the best dining experiences.</p>
+        </div>
+        <div class="col">
+          <h5>Contact Us</h5>
+          <p>Email: support@bookingbistro.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+        <div class="col">
+          <h5>Follow Us</h5>
+          <a href="#" target="_blank" class="social-link">Facebook</a><br>
+          <a href="#" target="_blank" class="social-link">Twitter</a><br>
+          <a href="#" target="_blank" class="social-link">Instagram</a>
+        </div>
+        <div class="col">
+          <h5>Subscribe to Our Newsletter</h5>
+          <form (submit)="onSubscribe()">
+            <input type="email" placeholder="Enter your email" [(ngModel)]="email" name="email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <p class="last">&copy; 2024 BookingBistro. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  

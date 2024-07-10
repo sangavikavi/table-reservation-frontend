@@ -13,10 +13,20 @@ export class RegisterComponent {
   email: string = '';
   password: string = '';
   phoneNumber: string = '';
+  errorMessage: string = '';  
 
   constructor(private router: Router, private authService: AuthService) { }
 
   onSubmit() {
+    if (!this.email || !this.password) {
+      this.errorMessage = 'Please fill in all fields';
+      return;
+    }
+    
+    if (!this.email.endsWith('@gmail.com')) {
+      this.errorMessage = 'Please provide a valid Gmail address.';
+      return; 
+    }
     this.authService.register(this.fullName, this.email, this.password, this.phoneNumber).subscribe(
       (response) => {
         console.log('Registration successful', response);
